@@ -1,0 +1,25 @@
+{{ define "body"}}
+<div class="text-center p-2">
+  <h2>Посмотри, сколько народу участвует!</h2>
+  <table class="table table-bordered table-striped table-sm">
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Телефон</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range . }}
+      {{ if .WillAttend }}
+      <tr>
+        <td>{{ .Имя }}</td>
+        <td>{{ .Email }}</td>
+        <td>{{ .Телефон }}</td>
+      </tr>
+      {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+{{ end }}
